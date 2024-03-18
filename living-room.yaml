@@ -59,6 +59,14 @@ voice_assistant:
         red: 0%
         green: 100%
         effect: none
+    - homeassistant.service:
+        service: tts.cloud_say
+        data:
+          entity_id: media_player.living_room
+        data_template:
+          message: "{{ my_stt }}"
+        variables:
+          my_stt: return x;
   on_tts_end:
     - media_player.play_media: !lambda return x;
     - light.turn_on:
