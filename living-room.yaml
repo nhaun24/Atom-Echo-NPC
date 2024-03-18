@@ -63,6 +63,7 @@ voice_assistant:
         service: tts.cloud_say
         data:
           entity_id: media_player.living_room
+          announce: true
         data_template:
           message: "{{ my_stt }}"
         variables:
